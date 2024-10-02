@@ -1,8 +1,6 @@
 package maya.conversorDeMoedas.models;
 
-import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.net.URI;
@@ -33,8 +31,6 @@ public class Conversor {
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
             conversao = new Gson().fromJson(response.body(), Conversao.class);
-            //System.out.println(response.body());
-            //System.out.println(conversao);
 
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException("Não foi possível encontrar esse par para conversão!");
