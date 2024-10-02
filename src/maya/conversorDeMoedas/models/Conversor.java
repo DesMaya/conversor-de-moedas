@@ -37,4 +37,16 @@ public class Conversor {
         }
 
     }
+
+    Double getQuantia (){
+        return conversao.conversion_result();
+    }
+
+    String getMoedaBase() {
+        return conversao.base_code();
+    }
+
+    String getMoedaAlvo() {
+        return conversao.target_code();
+    }
 }
