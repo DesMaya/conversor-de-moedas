@@ -30,9 +30,10 @@ public class Conversor {
                 .send(request, HttpResponse.BodyHandlers.ofString());
 
             conversao = new Gson().fromJson(response.body(), Conversao.class);
+            System.out.println(conversao);
 
-        } catch (IOException | InterruptedException e) {
-            throw new RuntimeException("Não foi possível encontrar esse par para conversão!");
+        } catch (Exception e) {
+            throw new RuntimeException("Não foi possível realizar a conversão!");
         }
 
     }
