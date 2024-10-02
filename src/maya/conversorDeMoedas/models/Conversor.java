@@ -37,15 +37,15 @@ public class Conversor {
 
     }
 
-    Double getQuantia (){
+    public Double getQuantia (){
         return conversao.conversion_result();
     }
 
-    String getMoedaBase() {
+    public String getMoedaBase() {
         return conversao.base_code();
     }
 
-    String getMoedaAlvo() {
+    public String getMoedaAlvo() {
         return conversao.target_code();
     }
 }
