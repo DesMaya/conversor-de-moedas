@@ -42,12 +42,7 @@ public class Main {
                 System.out.println("Valor convertido: " + conversor.getQuantia());
 
             } catch (InputMismatchException e) {
-                System.out.println("""
-                Opção inválida!
-                Digite uma opção válida
-                """);
-            }  catch (Exception e) {
-                System.out.println(e.getMessage());
+                System.out.println("Opção inválida!");
             }
         }
 
