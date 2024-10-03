@@ -1,7 +1,15 @@
 package maya.conversorDeMoedas.exceptions;
 
 public class OpcaoInvalida extends RuntimeException {
-    public OpcaoInvalida(String message) {
-        super(message);
+  private final String mensagem;
+
+    public OpcaoInvalida(String mensagem) {
+        this.mensagem = mensagem;
     }
+
+  @Override
+  public String getMessage() {
+    return this.mensagem;
+  }
 }
+
