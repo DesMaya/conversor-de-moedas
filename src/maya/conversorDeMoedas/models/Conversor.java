@@ -2,7 +2,6 @@ package maya.conversorDeMoedas.models;
 
 import com.google.gson.Gson;
 
-import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -37,15 +36,9 @@ public class Conversor {
 
     }
 
-    public Double getQuantia (){
-        return conversao.conversion_result();
-    }
-
-    public String getMoedaBase() {
-        return conversao.base_code();
-    }
-
-    public String getMoedaAlvo() {
-        return conversao.target_code();
+    public void mostraConversao() {
+        System.out.printf("""
+        Conversão de %s para %s --> %.2f
+        """,conversao.base_code(), conversao.target_code(), conversao.conversion_result());
     }
 }
