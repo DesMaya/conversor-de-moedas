@@ -2,13 +2,13 @@ package maya.conversorDeMoedas.main;
 
 import maya.conversorDeMoedas.models.Conversor;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+
         Conversor conversor = new Conversor();
-        var opcao = 0;
         var menssagemOpcoes = """
         *****************************************************
         
@@ -22,6 +22,7 @@ public class Main {
         
         Escolha uma opção válida: 
         *****************************************************
+        
         """;
 
         System.out.println("""
@@ -30,12 +31,26 @@ public class Main {
         
         """);
 
-        try {
-            conversor.converter("BRL", "USD", 100);
-            System.out.println("Valor convertido: " + conversor.getQuantia());
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+        while (true) {
+            try {
+                Scanner sc = new Scanner(System.in);
+                System.out.println(menssagemOpcoes);
+                var opcao = sc.nextInt();
+                if (opcao == 7 ) break;
+
+                conversor.converter("BRL", "USD", 100);
+                System.out.println("Valor convertido: " + conversor.getQuantia());
+
+            } catch (InputMismatchException e) {
+                System.out.println("""
+                Opção inválida!
+                Digite uma opção válida
+                """);
+            }  catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
+
 
     }
 }
