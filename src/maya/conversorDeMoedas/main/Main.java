@@ -91,6 +91,11 @@ public class Main {
             }
         }
 
+        System.out.println("""
+        Obrigada por utilizar o conversor de moedas!
+        Até breve <3
+        """);
+
 
     }
 }

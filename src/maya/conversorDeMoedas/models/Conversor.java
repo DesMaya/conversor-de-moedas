@@ -9,13 +9,9 @@ import java.net.http.HttpResponse;
 
 public class Conversor {
     private Conversao conversao;
-    private String moedaBase;
-    private String moedaAlvo;
     private double quantia;
     
     public void converter(String moeda_alvo, String moeda_base, double quantia) {
-        this.moedaBase = moeda_base;
-        this.moedaAlvo = moeda_alvo;
         this.quantia = quantia;
 
 
