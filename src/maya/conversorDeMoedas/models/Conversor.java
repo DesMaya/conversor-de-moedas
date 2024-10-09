@@ -9,8 +9,15 @@ import java.net.http.HttpResponse;
 
 public class Conversor {
     private Conversao conversao;
+    private String moedaBase;
+    private String moedaAlvo;
+    private double quantia;
+    
+    public void converter(String moeda_alvo, String moeda_base, double quantia) {
+        this.moedaBase = moeda_base;
+        this.moedaAlvo = moeda_alvo;
+        this.quantia = quantia;
 
-    public void converter(String moeda_base, String moeda_alvo, double quantia) {
 
         var key = "05c0ca24299e9c5398f611e0";
         var uri = URI.create(
@@ -38,7 +45,7 @@ public class Conversor {
 
     public void mostraConversao() {
         System.out.printf("""
-        Conversão de %s para %s --> %.2f
-        """,conversao.base_code(), conversao.target_code(), conversao.conversion_result());
+        Valor %.2f [%s] corresponde ao valor final de =>>>> %.2f [%s]
+        """,quantia, conversao.base_code(), conversao.conversion_result(), conversao.target_code());
     }
 }
